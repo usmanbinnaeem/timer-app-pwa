@@ -1,17 +1,21 @@
 language: node_js
 node_js:
   - "stable"
-
+cache:
+  directories:
+    - node_modules
 script:
-  - npm install
   - npm test
+env:
+  - CI=true
+
+before_deploy:
+  - npm install netlify-cli -g
   - npm run build
 
 deploy:
-  provider: netlify
+  provider: script
+  script: netlify deploy -s $NETLIFY_SITE_ID -t $NETLIFY_ACCESS_TOKEN -p ./build
   skip_cleanup: true
-  domain: https://timer-app-pwa.netlify.app/
-  project: ./build/
-
-on:
-  branch: master
+  on:
+    branch: master
