@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       flexGrow: 1,
-      minWidth: 275,
+      minWidth: 276,
     },
     title: {
       fontSize: 32,
