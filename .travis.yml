@@ -1,17 +1,17 @@
 language: node_js
 node_js:
- - "stable"
+  - "stable"
 
- script:
+script:
   - npm install
   - npm test
   - npm run build
 
 deploy:
-provider: netlify
-skip_cleanup: true
-domain:
-project: ./bild/ 
+  provider: netlify
+  skip_cleanup: true
+  domain: https://timer-app-pwa.netlify.app/
+  project: ./build/
 
 on:
-branch: master
+  branch: master
