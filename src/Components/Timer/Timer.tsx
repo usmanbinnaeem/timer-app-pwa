@@ -71,7 +71,7 @@ const Timer = (): JSX.Element => {
   return (
     <div
       style={{
-        border: "5px solid #000000",
+        border: "5px solid #000",
         maxWidth: "25vw",
         minHeight: "20vh",
         paddingTop: "20px",
